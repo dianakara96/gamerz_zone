@@ -1,5 +1,6 @@
 const videoUrl = 'https://steam-api7.p.rapidapi.com/media/videos/271590';
         const descriptionUrl = 'https://steam-api7.p.rapidapi.com/appDetails/detailedDescription/271590?plainText=true';
+        const url = 'https://steam-api7.p.rapidapi.com/search?query=Grand%20Theft&limit=5';
         const options = {
             method: 'GET',
             headers: {
@@ -9,10 +10,16 @@ const videoUrl = 'https://steam-api7.p.rapidapi.com/media/videos/271590';
         };
         async function fetchAndDisplayVideos() {
             try {
+                const response = await fetch(url, options);
+	            const result = await response.text();
+                console.log(result);
+                
                 const videoResponse = await fetch(videoUrl, options);
                 const videoData = await videoResponse.json();
                 const descriptionResponse = await fetch(descriptionUrl, options);
-                const descriptionData = await descriptionResponse.text();
+                let descriptionData = await descriptionResponse.text();
+
+                descriptionData = descriptionData.replace('{"detailedDescription":"', '');
                 const videosContainer = document.getElementById('videos-container');
                 videoData.videos.forEach((video, index) => {
                     const videoElement = document.createElement('div');
