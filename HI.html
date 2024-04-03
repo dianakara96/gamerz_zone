@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Videos with Detailed Description</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F3F3F3;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .video-item {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .thumbnail-container {
+            position: relative;
+        }
+        .video-item img {
+            width: 100%;
+            display: block;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70px;
+            height: 70px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .play-button img {
+            width: 50%;
+            height: auto;
+            filter: brightness(200%);
+        }
+        .video-description {
+            padding: 10px;
+            background-color: #F9F9F9;
+            border-top: 1px solid #ddd;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+        .video-description p {
+            margin: 0;
+            color: #666;
+        }
+        .read-more {
+            display: block;
+            text-align: center;
+            padding: 5px 0;
+            color: #007BFF;
+            cursor: pointer;
+        }
+        .read-more:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="videos-container"></div>
+    <script>
+        const videoUrl = 'https://steam-api7.p.rapidapi.com/media/videos/271590';
+        const descriptionUrl = 'https://steam-api7.p.rapidapi.com/appDetails/detailedDescription/271590?plainText=true';
+        const options = {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': '8b2406591fmsh7e1778906aba802p19c05cjsn8882346b4d52',
+                'X-RapidAPI-Host': 'steam-api7.p.rapidapi.com'
+            }
+        };
+        async function fetchAndDisplayVideos() {
+            try {
+                // Fetch videos
+                const videoResponse = await fetch(videoUrl, options);
+                const videoData = await videoResponse.json();
+                // Fetch detailed descriptions
+                const descriptionResponse = await fetch(descriptionUrl, options);
+                const descriptionData = await descriptionResponse.text();
+                const videosContainer = document.getElementById('videos-container');
+                videoData.videos.forEach((video, index) => {
+                    const videoElement = document.createElement('div');
+                    videoElement.classList.add('video-item');
+                    const thumbnailContainer = document.createElement('div');
+                    thumbnailContainer.classList.add('thumbnail-container');
+                    const thumbnailImg = document.createElement('img');
+                    thumbnailImg.src = video.thumbnail;
+                    thumbnailContainer.appendChild(thumbnailImg);
+                    const playButton = document.createElement('div');
+                    playButton.classList.add('play-button');
+                    playButton.innerHTML = '<img src="https://img.icons8.com/ios/50/ffffff/play--v2.png"/>';
+                    playButton.addEventListener('click', () => {
+                        window.open(video.mp4, '_blank');
+                    });
+                    thumbnailContainer.appendChild(playButton);
+                    videoElement.appendChild(thumbnailContainer);
+                    const videoDescription = document.createElement('div');
+                    videoDescription.classList.add('video-description');
+                    videoDescription.innerHTML = truncateDescription(descriptionData); // Assuming the description is the same for all videos
+                    videoElement.appendChild(videoDescription);
+                    const readMoreLink = document.createElement('a');
+                    readMoreLink.classList.add('read-more');
+                    readMoreLink.textContent = 'Read more';
+                    readMoreLink.addEventListener('click', () => {
+                        videoDescription.classList.toggle('expanded');
+                        if (readMoreLink.textContent === 'Read more') {
+                            readMoreLink.textContent = 'Read less';
+                        } else {
+                            readMoreLink.textContent = 'Read more';
+                        }
+                    });
+                    videoElement.appendChild(readMoreLink);
+                    videosContainer.appendChild(videoElement);
+                });
+            } catch (error) {
+                console.error(error);
+            }
+        }
+        // Function to truncate description
+        function truncateDescription(description) {
+            const maxLength = 200; // Maximum length for truncated description
+            if (description.length > maxLength) {
+                return description.substring(0, maxLength) + '...';
+            }
+            return description;
+        }
+        fetchAndDisplayVideos();
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

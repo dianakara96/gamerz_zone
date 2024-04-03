@@ -1,0 +1,566 @@
+body{
+    background-color: #050e2d;
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 7px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1b2141;
+    transition: 0.5%;
+    z-index: 1000;
+}
+header .logo{
+    position: relative;
+    color: aliceblue;
+    text-decoration: none;
+    font-size: 2em;
+    font-weight: 700;
+}
+header .nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+header ul li{
+    list-style: none;
+    margin: 5px;
+}
+header ul li a{
+    color: azure;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+header ul li a:hover{
+    background: lightskyblue;
+    color: black;
+    box-shadow: 0 0 10px lightskyblue;
+}
+header .action .searchBox{
+    padding: 5px;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    border-radius: 5px;
+}
+header .actionn .searchBox i{
+    font-size: 1.4em;
+    margin: 5px;
+    color: #1b2141;
+}
+header .action .searchBox input{
+    outline: none;
+    border: none;
+    font-size: 1em;
+    color:black;
+}
+.home{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 0px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.home .page{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;  
+    display: flex;
+    justify-content: center;
+     align-items: center;
+}
+
+/* .page img {
+    width: 700px;
+    height: auto;
+    max-height: 800px;
+    margin-top: 50px;
+} */
+.home .page .content{
+    width: 50%;
+    height: 100%;
+}
+.home .page .content h2{
+    font-size: 4em;
+    color: aliceblue;
+    letter-spacing: 1px;
+}
+.home .page .content p{
+    font-size: 1em;
+    color: azure;
+    letter-spacing: 1px;
+}
+.home .page .content .button{
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 20px 0;
+    border: 1px solid lightblue;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 5px;
+    color: beige;
+    letter-spacing: 1px;
+}
+.home .page .content a:hover{
+    background-color: lightblue;
+    border: none;
+    color: #1b2141;
+}
+.home .page img{
+    width: 500px;
+}
+/* .about img {
+    width: 400px;
+    height: 400px;
+    margin-top: 50px;
+    max-height: 800px; */
+
+
+.about{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 0px 100px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;  
+}
+/* .about .contentBox {
+    width: 50px;
+    margin: 20px;
+} */
+.about .contentBox h2{
+    font-size: 3em;
+    font-weight: 700;
+    color: whitesmoke;
+}
+.about .contentBox p{
+    max-width: 600px;
+    text-align: justify;
+    color: aliceblue;
+}
+
+.about .contentBox a{
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 20px 0;
+    border: 1px solid lightblue;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 5px;
+    color: beige;
+    letter-spacing: 1px;
+}
+.about .contentBox a:hover{
+    background: lightblue;
+    border: none;
+    color: #1b2141;
+    box-shadow: 0 0 10px #050e2d;
+}
+.games {
+    padding: 0px 100px;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 40px auto;
+}
+.games h2{
+    color: aliceblue;
+    margin: 10px 0;
+}
+.games ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+.games ul li{
+    list-style: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 5px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    color: azure;
+}
+.games ul li.active{
+    background-color: lightblue;
+    color: #1b2141;
+    box-shadow: 0 0 10px lightblue;
+}
+.games .cardBox{
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.games .cardBox .card{
+    width: 280px;
+    border-radius: 10px;
+    margin: 20px 40px;
+    background:#050e2d;
+    overflow: hidden;
+}
+.games .cardBox .card img{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+.games .cardBox .card .content{
+    padding: 10px;
+}
+.games .cardBox .card .content h4{
+    color: aliceblue;
+    margin: 15px 0;
+}
+.games .cardBox .card .progress-line{
+    position: relative;
+    height: 10px;
+    width: 100%;
+    background: #1b2141;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    transform: scaleX(1);
+    transform-origin: left;
+    animation: animate ls cubic-bezier(1,0,0.5,1) forwards;
+}
+.games .cardBox .card .progress-line span{
+    position: absolute;
+    height: 100%;
+    width: 80%;
+    border-radius: 10px;
+    background: lightblue;
+    box-shadow: 0 0 10px lightblue;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: animate 1s cubic-bezier(1,0,0.5,1) forwards;  
+}
+@keyframes animate{
+    100%{
+        transform: scaleX(1);
+    }
+}
+.games .cardBox .card .info{
+    border-top: 2px solid #050e2d;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.games .cardBox .card .info p{
+    font-size: 1em;
+    color: aliceblue;
+}
+.games .cardBox .card .info p span{
+    color: lightblue;
+}
+.games .cardBox .card .info a{
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 20px 0;
+    border: 1px solid lightblue;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 5px;
+    color: aliceblue;
+    letter-spacing: 1px;
+}
+.games .cardBox .card .info a:hover{
+    background: lightblue;
+    border: none;
+    color: #1b2141;
+    box-shadow: 0 0 10px lightblue;
+}
+.games .cardBox .card.hide{
+    display: none;
+}
+.tournaments{
+    padding: 0px 100px;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.tournaments h2{
+ color: aliceblue;
+    margin: 10px 0;
+}           
+.tournaments .boxBx{
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.tournaments .boxBx .box{
+    width: 350px;
+    border-radius: 10px;
+    margin: 20px 40px;
+    background: #1b2141;
+    overflow: hidden;
+}
+.tournaments .boxBx .box img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.tournaments .boxBx .box .content{
+    padding: 10px;
+}
+.tournaments  .boxBx .box .content h4{
+    color: aliceblue;
+    margin-top: 15px;
+}
+.tournaments .boxBx .box .content h4 span{
+    color: lightblue;
+}
+.tournaments .boxBx .box .content p{
+    text-align: justify;
+    color: azure;
+    margin-top: 10px;
+}
+.tournaments .boxBx .box .content .btn{
+    display: flex;
+    justify-content: space-between;
+}
+.tournaments .boxBx .box .content .watch{
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 20px 0;
+    background: lightblue;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 5px;
+    color: #050e2d;
+    letter-spacing: 1px;
+    box-shadow: 0 0 10px lightblue;
+}   
+.tournaments .boxBx .box .content .watch:hover{
+    border: 1px solid lightblue;
+    background: none;
+    color: white;
+    box-shadow: none;
+}
+.tournaments .boxBx .box .content .join{
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 20px 0;
+    border: 1px solid lightblue;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 5px;
+    color: aliceblue;
+    letter-spacing: 1px;
+}   
+.tournaments .boxBx .box .content .join:hover{
+    background: lightblue;
+    border: none;
+    color: #1b2141;
+    box-shadow: 0 0 10px lightblue;
+}
+
+
+.contact {
+    padding: 20px 100px;
+    width: 100%;
+    min-height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contact .form{
+    width: 50%;
+    margin: 30px;   
+}
+.contact .form h1{
+    color: aliceblue;   
+}
+.contact .form .inputBox{
+    margin: 10px 0;    
+}
+.contact .form .inputBox p{
+    color: azure;
+}
+.contact .form .inputBox input,
+.contact .form .inputBox textarea{
+    border: none;
+    outline: none;
+    padding: 10px;
+    width: 100%;
+    color: azure;
+    background-color: #1b2141;
+    min-height: 15px;
+    font-size: 1.1em;
+}
+.contact .form .inputBox textarea{
+    height: 150px;
+}
+.contact .form .inputBox input[type="submit"]{
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 15px 0;
+    outline: none;
+    background: transparent;
+    border: 1px solid lightblue;
+    text-decoration: none;
+    font-weight: 700;
+    width: 150px;
+    border-radius: 5px;
+    color: azure;
+    letter-spacing: 1px;
+}
+.contact .form .inputBox input[type="submit"]:hover{
+    background-color: lightblue;
+    border: none;
+    color: #1b2141;
+    box-shadow: 0 0 10px lightblue;
+}
+footer {
+    padding: 10px 100px;    
+}
+footer .info{
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+}
+ footer .info .logo{ 
+    position: relative;
+    color: aliceblue;
+    text-decoration: none;
+    font-size: 2em;
+    font-weight: 700;
+}
+footer .info p{
+    color: aliceblue;
+}
+footer .info ul{
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer .info ul li{
+    list-style: none;
+    height: 50px;
+    width: 50px; 
+    margin: 5px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid lightblue;
+}
+footer .info ul li:hover{
+    background: lightblue;
+    border: none;
+     box-shadow: 0 0 10px lightblue; 
+}
+footer .info ul li a i{
+    font-size: 1.5em;
+    color: aliceblue;
+}
+footer .info ul li:hover a i{
+    color: #1b2141;
+}
+.video{
+    color: aliceblue;
+    margin: 10px 0;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #050e2d;
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.video-item {
+    background-color: #1b2141;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+.thumbnail-container {
+    position: relative;
+}
+.video-item img {
+    width: 50%;
+    display: inline-flex;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 70px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.play-button img {
+    width: 50%;
+    height: auto;
+    filter: brightness(200%);
+}
+.video-description {
+    padding: 10px;
+    background-color: #1b2141;
+    border-top: 1px solid #ddd;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.video-description p {
+    margin: 0;
+    color: #666;
+}
+.read-more {
+    display: block;
+    text-align: center;
+    padding: 5px 0;
+    color: #007BFF;
+    cursor: pointer;
+}
+.read-more:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 991px)
+{
+    header
+    {
+        padding: 15px 40px;
+    }
+    header .nav{
+        pos
+    }
+}

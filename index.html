@@ -1,13 +1,304 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gamerz zone</title>
     <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
+
 <body>
-    
-    <script src="game.js"></script>
+    <header>
+        <a href="#" class="logo">Gamerz</a>
+        <ul class="nav">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#games">Games</a></li>
+            <li><a href="#tournaments">Tournaments</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="action">
+            <div class="searchBox">
+                <a href="#"><i class='bx bx-search'></i></a>
+                <input type="text" placeholder="Search Games">
+            </div>
+        </div>
+        <div class="togglemenu" onclick="toggleMenu();"></div>
+    </header>
+    <div class="home" id="home">
+        <div class="page">
+            <div class="content">
+                <h2>A Home For <br>Gamers</h2>
+                <p>A home that provide opportunity for professional gaming teams to house all of their players in a
+                    streamlined environment that the teams can cater and control.</p>
+                <a href="#" class="button">Join Now</a>
+            </div>
+            <img src="pngwing.com (3).png" alt="">
+        </div>
+    </div>
+    <div class="about" id="about">
+        <div class="contentBox">
+            <h2>About Us</h2>
+            <p>We are a new site designed to accelerate the advent of website gaming .We develop and publish hybrid
+                games that are mobile first and blockchain-enabled.We give gamers the opportunity to access their games
+                and play them.
+                Not only do they play it but they are able to purchase them.</p>
+            <a href="#">Read More</a>
+        </div>
+        <img src="pngwing.com (4).png" alt="" width="300" height="300">
+    </div>
+    <div class="games" id="games">
+        <h2>Popular Games</h2>
+        <ul>
+            <li class="list active" data-filter="all">All</li>
+            <li class="list" data-filter="pc">Pc Games</li>
+            <li class="list" data-filter="mobile">Mobile Games</li>
+        </ul>
+        <div class="cardBox">
+            <div class="card" data-item="pc">
+                <img src="pngwing.com.png" alt="" width="100" height="100">
+                <div class="content">
+                    <h4>Grand Theft Auto V</h4>
+                    <div class="progress-line"><span></span></div>
+                    <div class="info">
+                        <p>Pricing<br><span>ksh2k</span></p>
+                        <a href="#">Play Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card" data-item="pc">
+                <img src="pngwing.com (1).png" alt="" width="100" height="100">
+                <div class="content">
+                    <h4>Baman Arkham City</h4>
+                    <div class="progress-line"><span></span></div>
+                    <div class="info">
+                        <p>Pricing<br><span>ksh2k</span></p>
+                        <a href="#">Play Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card" data-item="pc">
+                <img src="pngwing.com (2).png" alt="" width="100" height="100">
+                <div class="content">
+                    <h4>The Walking Dead</h4>
+                    <div class="progress-line"><span></span></div>
+                    <div class="info">
+                        <p>Pricing<br><span>ksh2k</span></p>
+                        <a href="#">Play Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card" data-item="pc">
+                <img src="pngwing.com (5).png" alt="" width="100" height="100">
+                <div class="content">
+                    <h4>The Wolf Among Us</h4>
+                    <div class="progress-line"><span></span></div>
+                    <div class="info">
+                        <p>Pricing<br><span>ksh2k</span></p>
+                        <a href="#">Play Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card" data-item="pc">
+                <img src="pngwing.com (6).png" alt="" width="100" height="100">
+                <div class="content">
+                    <h4>Life Is Strange</h4>
+                    <div class="progress-line"><span></span></div>
+                    <div class="info">
+                        <p>Pricing<br><span>ksh2k</span></p>
+                        <a href="#">Play Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card" data-item="mobile">
+                <img src="pngwing.com (8).png" alt="" width="100" height="100">
+                <div class="content">
+                    <h4>PUBG Mobile</h4>
+                    <div class="progress-line"><span></span></div>
+                    <div class="info">
+                        <p>Pricing<br><span>ksh2k</span></p>
+                        <a href="#">Play Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card" data-item="mobile">
+                <img src="pngwing.com (9).png" alt="" width="100" height="100">
+                <div class="content">
+                    <h4>Mortal Kombat</h4>
+                    <div class="progress-line"><span></span></div>
+                    <div class="info">
+                        <p>Pricing<br><span>ksh2k</span></p>
+                        <a href="#">Play Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card" data-item="mobile">
+                <img src="pngwing.com (10).png" alt="" width="100" height="100">
+                <div class="content">
+                    <h4>Call Of Duty</h4>
+                    <div class="progress-line"><span></span></div>
+                    <div class="info">
+                        <p>Pricing<br><span>ksh2k</span></p>
+                        <a href="#">Play Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card" data-item="mobile">
+                <img src="pngwing.com (11).png" alt="" width="100" height="100">
+                <div class="content">
+                    <h4>A Shadow Fight</h4>
+                    <div class="progress-line"><span></span></div>
+                    <div class="info">
+                        <p>Pricing<br><span>ksh2k</span></p>
+                        <a href="#">Play Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tournaments" id="tournaments">
+        <h2>Live Tournaments</h2>
+        <div class="boxBx">
+            <div class="box">
+                <img src="pngwing.com (13).png" alt="">
+                <div class="content">
+                    <h4><span>50</span>Matches in progress..</h4>
+                    <p>Watch the quarter final live between different teams,
+                        time to tackle a new set of levels,unlock new avatars
+                        and achieve more badges.
+                    </p>
+                    <div class="btn">
+                        <a href="#" class="watch">Watch</a>
+                        <a href="#" class="join">Join Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <img src="pngwing.com (14).png" alt="">
+                <div class="content">
+                    <h4><span>40</span>Matches in progress..</h4>
+                    <p>Watch the final fights between different avatars,
+                        time to tackle a new set of levels,unlock new avatars
+                        and achieve more badges.
+                    </p>
+                    <div class="btn">
+                        <a href="#" class="watch">Watch</a>
+                        <a href="#" class="join">Join Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <img src="pngwing.com (16).png" alt="">
+                <div class="content">
+                    <h4><span>30</span>Matches in progress..</h4>
+                    <p>Watch the final fights between different avatars,
+                        time to tackle a new set of levels,unlock new avatars
+                        and achieve more badges.
+                    </p>
+                    <div class="btn">
+                        <a href="#" class="watch">Watch</a>
+                        <a href="#" class="join">Join Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <img src="pngwing.com (15).png" alt="">
+                <div class="content">
+                    <h4><span>20</span>Matches in progress..</h4>
+                    <p>Watch the final fights between different avatars,
+                        time to tackle a new set of levels,unlock new avatars
+                        and achieve more badges.
+                    </p>
+                    <div class="btn">
+                        <a href="#" class="watch">Watch</a>
+                        <a href="#" class="join">Join Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <img src="pngwing.com (17).png" alt="">
+                <div class="content">
+                    <h4><span>40</span>Matches in progress..</h4>
+                    <p>Watch the final race between different avatars,
+                        time to tackle a new set of levels,unlock new avatars
+                        and achieve more badges.
+                    </p>
+                    <div class="btn">
+                        <a href="#" class="watch">Watch</a>
+                        <a href="#" class="join">Join Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <img src="pngwing.com (18).png" alt="">
+                <div class="content">
+                    <h4><span>40</span>Matches in progress..</h4>
+                    <p>Watch the final race between different avatars,
+                        time to tackle a new set of levels,unlock new avatars
+                        and achieve more badges.
+                    </p>
+                    <div class="btn">
+                        <a href="#" class="watch">Watch</a>
+                        <a href="#" class="join">Join Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="video games">
+        <h5>More About Games</h5>
+        <div>
+            <div class="container" id="videos-container"></div>
+            <form action="https://formspree.io/f/xjvnazky" method="POST">
+            <div class="contact" id="contact">
+                <img src="ben-griffiths-P2BJH8VHs2k-unsplash.jpg" alt="" width="500" height="500">
+                <div class="form">
+                    <h1>Contact Us</h1>
+                    <div class="inputBox">
+                        <p>Enter Name</p>
+                        <input type="text" placeholder="Full Name..." required>
+                    </div>
+                    <div class="inputBox">
+                        <p>Enter Email</p>
+                        <input type="text" placeholder="Email Address..." required>
+                    </div>
+                    <div class="inputBox">
+                        <p>Message</p>
+                        <textarea placeholder="Type your message here..."></textarea>
+                    </div>
+                    <div class="inputBox">
+                        <input type="Submit" name="Submit">
+                    </div>
+                    </form>
+                    <div class="input">
+                        <button id="google-login-btn" class="google-button">
+                            <i class='bx bxl-google'></i>Login with Google
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div>
+
+
+
+                <footer>
+                    <div class="info">
+                        <a href="#" class="logo">Gamerz</a>
+                        <p><i class='bx bxs-copyright'></i>2024 All Rights Reserved</p>
+                        <ul>
+                            <li><a href="#"><i class='bx bxl-meta'></i></a></li>
+                            <li><a href="#"><i class='bx bxl-twitter'></i></a></li>
+                            <li><a href="#"><i class='bx bxl-instagram-alt'></i></a></li>
+                            <li><a href="#"><i class='bx bxl-youtube'></i></a></li>
+                        </ul>
+                    </div>
+                </footer>
+            </div>
+            <script src="video.js"></script>
+            <script src="game.js"></script>
+            <script src="signup.js" defer type="module"></script>
 </body>
+
 </html>
